@@ -13,3 +13,6 @@ il devra également tenir compte de certaines infos techniques, si les consignes
 Le jeu peut prendre fin de 2 manières : 
 - soit la fusée est mal conçue, elle explose donc en vol
 - soit la fusée est bien conçue, lui permettant ainsi de voler correctement
+
+
+*JAVA : Jubilation pour l'Aéronautique et le Vol vers l'Aventure
