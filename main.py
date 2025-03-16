@@ -73,7 +73,20 @@ def menu():
 
 menu()
 
+# je définis ci-dessous le 'start', y seront indiqués : les règles, les instructions de jeu
+
+def start():
+    clear()
+    print(f"""{MAGENTA}
+        --------------------------[ JAVA ]--------------------------  """)
+
 # user input
 
 while True:
     user_input = input(f"{BLUE}~JAVA@st4rship+:{RESET} ")
+    
+    if user_input == 'start':
+        start()
+    elif user_input == 'home':
+        clear()
+        menu()
