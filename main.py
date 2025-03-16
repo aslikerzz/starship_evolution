@@ -47,7 +47,7 @@ def clear():
 def menu():
     print(f"""{MAGENTA}
           
-        --------------------------[ MENU ]--------------------------{RESET}
+        --------------------------[ {RESET}{HIGH_BLUE}MENU{MAGENTA} ]--------------------------{RESET}
         
         Je vous souhaite la bienvenue dans {YELLOW}Starship{RESET} {CYAN}Evolution{RESET}, jeune pilote !
         
@@ -60,7 +60,7 @@ def menu():
         
         Bon courage, jeune pilote, la {UNDERLINE}{HIGH_BLUE}JAVA{RESET}{RED}*{RESET} compte sur votre savoir faire !
         
-        'start' pour commencer à jouer.
+        '{HIGH_GREEN}rules{RESET}' pour accéder aux règles et commencer à jouer.
         
         
         {RED}*{RESET}JAVA {GREEN}=>{RESET} {RED}J{RESET}ubilation pour l'{RED}A{RESET}éronautique et le {RED}V{RESET}ol vers l'{RED}A{RESET}venture
@@ -75,18 +75,71 @@ menu()
 
 # je définis ci-dessous le 'start', y seront indiqués : les règles, les instructions de jeu
 
-def start():
+def rules():
     clear()
     print(f"""{MAGENTA}
-        --------------------------[ JAVA ]--------------------------  """)
+        --------------------------[{RESET}{HIGH_BLUE} JAVA{RESET}{MAGENTA} ]--------------------------{RESET}
+        
+        Comme annoncé dans le menu, votre {HIGH_RED}mission{RESET} sera de faire un choix entre -- configurations.
+        
+        
+        Étudiez bien les configurations, utilisez le {HIGH_RED}manuel{RESET}, et veillez à ce qu'il n'y est pas de pièces 
+        trop puissantes, ou inversement.
+        
+        Votre fusée doit voler, pas s'écraser !
+        
+        Vos {GREEN}contrôles{RESET} se limitent des commandes, tapez '{HIGH_GREEN}help{RESET}' pour obtenir la liste de celles-ci.
+        
+        {CYAN}Prêt(e) à devenir le génie de demain ?{RESET}{HIGH_GREEN}  y: lancer la partie{RESET}  //  {HIGH_RED}n: retour au menu principal{RESET}
+        
+        
+        {MAGENTA}--------------------------------------------------------------{RESET}
+        
+        """)
+
+# listes commandes ci-dessous
+
+def help():
+    print(f"""{MAGENTA}
+        --------------------------[{RESET}{HIGH_BLUE} JAVA{RESET}{HIGH_YELLOW} HELP{RESET}{MAGENTA} ]--------------------------{RESET}
+        
+        {UNDERLINE}{BOLD}{HIGH_RED}Commandes config/informatives :{RESET}
+        
+        {HIGH_CYAN}home{RESET}{HIGH_YELLOW}-{RESET} accéder au menu principal
+        {HIGH_CYAN}rules{RESET}{HIGH_YELLOW}-{RESET} obtenir les règles
+        {HIGH_CYAN}help{RESET}{HIGH_YELLOW}-{RESET} accéder au menu d'aide
+        
+        {UNDERLINE}{BOLD}{HIGH_RED}Commandes de jeu :{RESET}
+        {RED} PAS ENCORE DEV{RESET}
+        
+        {MAGENTA}{MAGENTA}-----------------------------------------------------------------{RESET}{RESET}
+        
+        """)
 
 # user input
 
 while True:
     user_input = input(f"{BLUE}~JAVA@st4rship+:{RESET} ")
     
-    if user_input == 'start':
-        start()
+    if user_input == 'rules':
+        rules()
     elif user_input == 'home':
         clear()
         menu()
+    elif user_input == 'bye':
+        break
+    elif user_input == 'help':
+        clear()
+        help()
+    elif user_input == 'n':
+        clear()
+        menu()
+    elif user_input == 'y':
+        clear()
+        print(f"""{HIGH_MAGENTA}ENCORE EN DEV{RESET}
+              
+              """)
+        
+# https://app.cadets.gc.ca/cadet-publications/A-CR-CCP-802-PF-002/ICN-3AC07-Y371PF0424-001-01.jpg
+#
+# https://everest74.fr/animateur/cons/photos/cons%20microfus%C3%A9es.JPG
