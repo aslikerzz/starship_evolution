@@ -140,6 +140,4 @@ while True:
               
               """)
         
-# https://app.cadets.gc.ca/cadet-publications/A-CR-CCP-802-PF-002/ICN-3AC07-Y371PF0424-001-01.jpg
-#
-# https://everest74.fr/animateur/cons/photos/cons%20microfus%C3%A9es.JPG
+# https://static.techno-science.net/illustration/Definitions/1200px/v/v-2-rocket-diagram-with-french-labels.svg_481431405adecddfbbb13033a0a3871a.png
