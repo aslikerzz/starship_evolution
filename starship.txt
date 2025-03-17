@@ -4,3 +4,6 @@
  |  |
  |  |
 /____\
+
+
+'\' ne passe pas => trouver un autre modèle ASCII pour les fusées :(
