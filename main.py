@@ -4,7 +4,7 @@ import subprocess
 import math
 import winsound
 
-# lignes prog : 29/77
+# lignes prog : 58/145  =>  87 lignes vides/commentaires (en comptant celle-ci)
 
 # j'appelle ici les codes ANSI pour les couleurs 
 # d'abord, je mets les effets et le reset
