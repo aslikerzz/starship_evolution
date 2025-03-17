@@ -137,12 +137,6 @@ while True:
     elif user_input == 'y':
         clear()
         print(f"""{HIGH_MAGENTA}ENCORE EN DEV{RESET}
-      /\
-     /  \
-     |==|
-     |  |
-     |  |
-    /____\
               """)
         
 # https://static.techno-science.net/illustration/Definitions/1200px/v/v-2-rocket-diagram-with-french-labels.svg_481431405adecddfbbb13033a0a3871a.png
