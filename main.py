@@ -4,7 +4,7 @@ import subprocess
 import math
 import winsound
 
-# lignes prog : 29/77
+# lignes prog : 58/145  =>  87 lignes vides/commentaires (en comptant celle-ci)
 
 # j'appelle ici les codes ANSI pour les couleurs 
 # d'abord, je mets les effets et le reset
@@ -139,4 +139,10 @@ while True:
         print(f"""{HIGH_MAGENTA}ENCORE EN DEV{RESET}
               """)
         
+<<<<<<< HEAD
 # https://static.techno-science.net/illustration/Definitions/1200px/v/v-2-rocket-diagram-with-french-labels.svg_481431405adecddfbbb13033a0a3871a.png
+=======
+# https://app.cadets.gc.ca/cadet-publications/A-CR-CCP-802-PF-002/ICN-3AC07-Y371PF0424-001-01.jpg
+#
+# https://everest74.fr/animateur/cons/photos/cons%20microfus%C3%A9es.JPG
+>>>>>>> 0239035a590406009b360a08f2d49b1c1fb3510c
