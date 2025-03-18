@@ -93,7 +93,7 @@ def rules():
         
         Votre fusée doit voler, pas s'écraser !
         
-        Vos {GREEN}contrôles{RESET} se limitent des commandes, tapez '{HIGH_GREEN}aide{RESET}' pour obtenir la liste de celles-ci.
+        Vos {HIGH_GREEN}contrôles{RESET} se limitent des commandes, tapez '{HIGH_GREEN}help{RESET}' pour obtenir la liste de celles-ci.
         
         {CYAN}Prêt(e) à devenir le génie de demain ?{RESET}{HIGH_GREEN}  y: lancer la partie{RESET}  //  {HIGH_RED}n: retour au menu principal{RESET}
         
@@ -106,8 +106,8 @@ def rules():
 
 # listes commandes ci-dessous
 
-def aide():
-    function_stack.append(aide)
+def h():
+    function_stack.append(h)
     print(f"""{MAGENTA}
         --------------------------[{RESET}{HIGH_BLUE} JAVA{RESET}{HIGH_YELLOW} HELP{RESET}{MAGENTA} ]--------------------------{RESET}
         
@@ -132,31 +132,31 @@ def y():
     function_stack.append(y)
     clear()
     print(f"""
-     ——————————[CONFIG 1]—————————————                              ——————————[CONFIG 2]—————————————        
-    ‖ {UNDERLINE}Puissance :{RESET}                      ‖                           ‖ {UNDERLINE}Puissance :{RESET}                      ‖
-    ‖ Chambre combustion : 19          ‖                           ‖ Chambre combustion : 72          ‖
-    ‖ Turbopompe : 12                  ‖                           ‖ Turbopompe : 46                  ‖
-    ‖ Air comprimé : 34                ‖                           ‖ Air comprimé : 119               ‖
-    ‖ Réservoir : 40                   ‖                           ‖ Réservoir : 210                  ‖
-    ‖                                  ‖                           ‖                                  ‖
-    ‖  {UNDERLINE}Équipements :{RESET}                   ‖                           ‖  {UNDERLINE}Équipements :{RESET}                   ‖
-    ‖ Fuselage : 11                    ‖                           ‖ Fuselage : 29                    ‖
-    ‖ Empennage : 29                   ‖                           ‖ Empennage : 52                   ‖
-    ‖ Déflecteur de jet : 30           ‖                           ‖ Déflecteur de jet : 90           ‖
-    ‖ Gouverne aerodynamique : 22      ‖                           ‖ Gouverne aerodynamique : 11      ‖
-    ‖ Plateforme gyroscopique: 16      ‖                           ‖ Plateforme gyroscopique: 76      ‖
-    ‖                                  ‖                           ‖                                  ‖
-     —————————————————————————————————                               —————————————————————————————————
+     {MAGENTA}——————————[{RESET}{HIGH_YELLOW}CONFIG 1{RESET}{MAGENTA}]—————————————                              ——————————[CONFIG 2]—————————————        
+    ‖{RESET}{HIGH_RED} {UNDERLINE}Puissance :{RESET}{MAGENTA}                      ‖                           ‖ {UNDERLINE}Puissance :{RESET}                      ‖
+    {MAGENTA}‖{HIGH_BLUE} Chambre combustion :{RESET} 19{MAGENTA}          ‖                           ‖ Chambre combustion : 72          ‖
+    {MAGENTA}‖{HIGH_BLUE} Turbopompe :{RESET} 12{MAGENTA}                  ‖                           ‖ Turbopompe : 46                  ‖
+    {MAGENTA}‖{HIGH_BLUE} Air comprimé :{RESET} 34{MAGENTA}                ‖                           ‖ Air comprimé : 119               ‖
+    {MAGENTA}‖{HIGH_BLUE} Réservoir :{RESET} 40{MAGENTA}                   ‖                           ‖ Réservoir : 210                  ‖
+    {MAGENTA}‖                                  ‖                           ‖                                  ‖
+    ‖ {HIGH_RED}{UNDERLINE}Équipements :{RESET}{MAGENTA}                    ‖                           ‖  {UNDERLINE}Équipements :{RESET}                   ‖
+    {MAGENTA}‖{HIGH_BLUE} Fuselage :{RESET} 11{MAGENTA}                    ‖                           ‖ Fuselage : 29                    ‖
+    {MAGENTA}‖{HIGH_BLUE} Empennage :{RESET} 29{MAGENTA}                   ‖                           ‖ Empennage : 52                   ‖
+    {MAGENTA}‖{HIGH_BLUE} Déflecteur de jet :{RESET} 30{MAGENTA}           ‖                           ‖ Déflecteur de jet : 90           ‖
+    {MAGENTA}‖{HIGH_BLUE} Gouverne aerodynamique :{RESET} 22{MAGENTA}      ‖                           ‖ Gouverne aerodynamique : 11      ‖
+    {MAGENTA}‖{HIGH_BLUE} Plateforme gyroscopique:{RESET} 16{MAGENTA}      ‖                           ‖ Plateforme gyroscopique: 76      ‖
+    {MAGENTA}‖                                  {MAGENTA}‖                           ‖                                  ‖
+     —————————————————————————————————{RESET}                               —————————————————————————————————
      
      
      ——————————[CONFIG 3]—————————————                              ——————————[CONFIG 4]—————————————         
-    ‖ {UNDERLINE}Puissance :{RESET}                      ‖                           ‖ {UNDERLINE}Puissance :{RESET}                      ‖
+    ‖  {UNDERLINE} Puissance :{RESET}                    ‖                           ‖  {UNDERLINE} Puissance :{RESET}                    ‖
     ‖ Chambre combustion : 103         ‖                           ‖ Chambre combustion : 193         ‖
     ‖ Turbopompe : 79                  ‖                           ‖ Turbopompe : 68                  ‖
     ‖ Air comprimé : 89                ‖                           ‖ Air comprimé : 74                ‖
     ‖ Réservoir : 220                  ‖                           ‖ Réservoir : 802                  ‖
     ‖                                  ‖                           ‖                                  ‖ 
-    ‖  {UNDERLINE}Équipements :{RESET}                   ‖                           ‖  {UNDERLINE}Équipements :{RESET}                   ‖ 
+    ‖  {UNDERLINE} Équipements :{RESET}                  ‖                           ‖   {UNDERLINE} Équipements :{RESET}                 ‖ 
     ‖ Fuselage : 105                   ‖                           ‖ Fuselage : 308                   ‖   
     ‖ Empennage : 90                   ‖                           ‖ Empennage : 212                  ‖  
     ‖ Déflecteur de jet : 65           ‖                           ‖ Déflecteur de jet : 172          ‖ 
@@ -185,9 +185,9 @@ while True:
         menu()
     elif user_input == 'bye':
         break
-    elif user_input == 'aide':
+    elif user_input == 'help':
         clear()
-        help()
+        h()
     elif user_input == 'n':
         clear()
         menu()
