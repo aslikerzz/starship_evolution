@@ -4,6 +4,9 @@ import subprocess
 import math
 import winsound
 
+# ci-dessous, je définis la fonction "stack", qui va me permettre de créer un log des fonctions utilisées (quand le joueur tape 'back', ça pourra le ramener dans le menu précédent)
+function_stack = []
+
 # lignes prog : 58/145  =>  87 lignes vides/commentaires (en comptant celle-ci)
 
 # j'appelle ici les codes ANSI pour les couleurs 
@@ -45,6 +48,7 @@ def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def menu():
+    function_stack.append(menu)
     print(f"""{MAGENTA}
           
         --------------------------[ {RESET}{HIGH_BLUE}MENU{MAGENTA} ]--------------------------{RESET}
@@ -66,7 +70,7 @@ def menu():
         {RED}*{RESET}JAVA {GREEN}=>{RESET} {RED}J{RESET}ubilation pour l'{RED}A{RESET}éronautique et le {RED}V{RESET}ol vers l'{RED}A{RESET}venture
         
         
-        https://github.com/aslikerzz/starship_evolution
+        https://github.com/aslikerzz/starship_evolution  <= lien cliquable (ctrl+clic)
         {MAGENTA}--------------------------------------------------------------{RESET}
         
         """)
@@ -76,6 +80,7 @@ menu()
 # je définis ci-dessous le 'start', y seront indiqués : les règles, les instructions de jeu
 
 def rules():
+    function_stack.append(rules)
     clear()
     print(f"""{MAGENTA}
         --------------------------[{RESET}{HIGH_BLUE} JAVA{RESET}{MAGENTA} ]--------------------------{RESET}
@@ -88,10 +93,12 @@ def rules():
         
         Votre fusée doit voler, pas s'écraser !
         
-        Vos {GREEN}contrôles{RESET} se limitent des commandes, tapez '{HIGH_GREEN}help{RESET}' pour obtenir la liste de celles-ci.
+        Vos {GREEN}contrôles{RESET} se limitent des commandes, tapez '{HIGH_GREEN}aide{RESET}' pour obtenir la liste de celles-ci.
         
         {CYAN}Prêt(e) à devenir le génie de demain ?{RESET}{HIGH_GREEN}  y: lancer la partie{RESET}  //  {HIGH_RED}n: retour au menu principal{RESET}
         
+        
+        '{HIGH_GREEN}back{RESET}' => retour au menu précédent
         
         {MAGENTA}--------------------------------------------------------------{RESET}
         
@@ -99,7 +106,8 @@ def rules():
 
 # listes commandes ci-dessous
 
-def help():
+def aide():
+    function_stack.append(aide)
     print(f"""{MAGENTA}
         --------------------------[{RESET}{HIGH_BLUE} JAVA{RESET}{HIGH_YELLOW} HELP{RESET}{MAGENTA} ]--------------------------{RESET}
         
@@ -112,11 +120,60 @@ def help():
         {UNDERLINE}{BOLD}{HIGH_RED}Commandes de jeu :{RESET}
         {RED} PAS ENCORE DEV{RESET}
         
+        
+        '{HIGH_GREEN}back{RESET}' => retour au menu précédent
+        
         {MAGENTA}{MAGENTA}-----------------------------------------------------------------{RESET}{RESET}
         
         """)
+    
+# choix des configs
+def y():
+    function_stack.append(y)
+    clear()
+    print(f"""
+     ——————————[CONFIG 1]—————————————                              ——————————[CONFIG 2]—————————————        
+    ‖ {UNDERLINE}Puissance :{RESET}                      ‖                           ‖ {UNDERLINE}Puissance :{RESET}                      ‖
+    ‖ Chambre combustion : 19          ‖                           ‖ Chambre combustion : 72          ‖
+    ‖ Turbopompe : 12                  ‖                           ‖ Turbopompe : 46                  ‖
+    ‖ Air comprimé : 34                ‖                           ‖ Air comprimé : 119               ‖
+    ‖ Réservoir : 40                   ‖                           ‖ Réservoir : 210                  ‖
+    ‖                                  ‖                           ‖                                  ‖
+    ‖  {UNDERLINE}Équipements :{RESET}                   ‖                           ‖  {UNDERLINE}Équipements :{RESET}                   ‖
+    ‖ Fuselage : 11                    ‖                           ‖ Fuselage : 29                    ‖
+    ‖ Empennage : 29                   ‖                           ‖ Empennage : 52                   ‖
+    ‖ Déflecteur de jet : 30           ‖                           ‖ Déflecteur de jet : 90           ‖
+    ‖ Gouverne aerodynamique : 22      ‖                           ‖ Gouverne aerodynamique : 11      ‖
+    ‖ Plateforme gyroscopique: 16      ‖                           ‖ Plateforme gyroscopique: 76      ‖
+    ‖                                  ‖                           ‖                                  ‖
+     —————————————————————————————————                               —————————————————————————————————
+     
+     
+     ——————————[CONFIG 3]—————————————                              ——————————[CONFIG 4]—————————————         
+    ‖ {UNDERLINE}Puissance :{RESET}                      ‖                           ‖ {UNDERLINE}Puissance :{RESET}                      ‖
+    ‖ Chambre combustion : 103         ‖                           ‖ Chambre combustion : 193         ‖
+    ‖ Turbopompe : 79                  ‖                           ‖ Turbopompe : 68                  ‖
+    ‖ Air comprimé : 89                ‖                           ‖ Air comprimé : 74                ‖
+    ‖ Réservoir : 220                  ‖                           ‖ Réservoir : 802                  ‖
+    ‖                                  ‖                           ‖                                  ‖ 
+    ‖  {UNDERLINE}Équipements :{RESET}                   ‖                           ‖  {UNDERLINE}Équipements :{RESET}                   ‖ 
+    ‖ Fuselage : 105                   ‖                           ‖ Fuselage : 308                   ‖   
+    ‖ Empennage : 90                   ‖                           ‖ Empennage : 212                  ‖  
+    ‖ Déflecteur de jet : 65           ‖                           ‖ Déflecteur de jet : 172          ‖ 
+    ‖ Gouverne aerodynamique : 67      ‖                           ‖ Gouverne aerodynamique : 420     ‖ 
+    ‖ Plateforme gyroscopique: 99      ‖                           ‖ Plateforme gyroscopique: 192     ‖  
+    ‖                                  ‖                           ‖                                  ‖  
+     —————————————————————————————————                              —————————————————————————————————                
+     
+     """)
+    
+def go_back():
+    if len(function_stack) > 1:
+        function_stack.pop()
+        previous_function = function_stack.pop()
+        previous_function()
 
-# user input
+# gestionnaire des commandes
 
 while True:
     user_input = input(f"{BLUE}~JAVA@st4rship+:{RESET} ")
@@ -128,15 +185,20 @@ while True:
         menu()
     elif user_input == 'bye':
         break
-    elif user_input == 'help':
+    elif user_input == 'aide':
         clear()
         help()
     elif user_input == 'n':
         clear()
         menu()
+    elif user_input == 'back':
+        clear()
+        go_back()
     elif user_input == 'y':
         clear()
-        print(f"""{HIGH_MAGENTA}ENCORE EN DEV{RESET}
-              """)
-        
+        y()
+
+
+
+# source schéma fusée :
 # https://static.techno-science.net/illustration/Definitions/1200px/v/v-2-rocket-diagram-with-french-labels.svg_481431405adecddfbbb13033a0a3871a.png
