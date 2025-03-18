@@ -7,7 +7,7 @@ import winsound
 # ci-dessous, je définis la fonction "stack", qui va me permettre de créer un log des fonctions utilisées (quand le joueur tape 'back', ça pourra le ramener dans le menu précédent)
 function_stack = []
 
-# lignes prog : 58/145  =>  87 lignes vides/commentaires (en comptant celle-ci)
+# lignes prog : 105/205  =>  100 lignes vides/commentaires (en comptant celle-ci)
 
 # j'appelle ici les codes ANSI pour les couleurs 
 # d'abord, je mets les effets et le reset
