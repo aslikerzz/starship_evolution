@@ -7,7 +7,7 @@ import winsound
 # ci-dessous, je définis la fonction "stack", qui va me permettre de créer un log des fonctions utilisées (quand le joueur tape 'back', ça pourra le ramener dans le menu précédent)
 function_stack = []
 
-# lignes prog : 105/205  =>  100 lignes vides/commentaires (en comptant celle-ci)
+# lignes prog : 166/290  =>  124 lignes vides/commentaires (en comptant celle-ci)
 
 # j'appelle ici les codes ANSI pour les couleurs 
 # d'abord, je mets les effets et le reset
@@ -132,40 +132,113 @@ def y():
     function_stack.append(y)
     clear()
     print(f"""
-     {MAGENTA}——————————[{RESET}{HIGH_YELLOW}CONFIG 1{RESET}{MAGENTA}]—————————————                              ——————————[CONFIG 2]—————————————        
-    ‖{RESET}{HIGH_RED} {UNDERLINE}Puissance :{RESET}{MAGENTA}                      ‖                           ‖ {UNDERLINE}Puissance :{RESET}                      ‖
-    {MAGENTA}‖{HIGH_BLUE} Chambre combustion :{RESET} 19{MAGENTA}          ‖                           ‖ Chambre combustion : 72          ‖
-    {MAGENTA}‖{HIGH_BLUE} Turbopompe :{RESET} 12{MAGENTA}                  ‖                           ‖ Turbopompe : 46                  ‖
-    {MAGENTA}‖{HIGH_BLUE} Air comprimé :{RESET} 34{MAGENTA}                ‖                           ‖ Air comprimé : 119               ‖
-    {MAGENTA}‖{HIGH_BLUE} Réservoir :{RESET} 40{MAGENTA}                   ‖                           ‖ Réservoir : 210                  ‖
-    {MAGENTA}‖                                  ‖                           ‖                                  ‖
-    ‖ {HIGH_RED}{UNDERLINE}Équipements :{RESET}{MAGENTA}                    ‖                           ‖  {UNDERLINE}Équipements :{RESET}                   ‖
-    {MAGENTA}‖{HIGH_BLUE} Fuselage :{RESET} 11{MAGENTA}                    ‖                           ‖ Fuselage : 29                    ‖
-    {MAGENTA}‖{HIGH_BLUE} Empennage :{RESET} 29{MAGENTA}                   ‖                           ‖ Empennage : 52                   ‖
-    {MAGENTA}‖{HIGH_BLUE} Déflecteur de jet :{RESET} 30{MAGENTA}           ‖                           ‖ Déflecteur de jet : 90           ‖
-    {MAGENTA}‖{HIGH_BLUE} Gouverne aerodynamique :{RESET} 22{MAGENTA}      ‖                           ‖ Gouverne aerodynamique : 11      ‖
-    {MAGENTA}‖{HIGH_BLUE} Plateforme gyroscopique:{RESET} 16{MAGENTA}      ‖                           ‖ Plateforme gyroscopique: 76      ‖
-    {MAGENTA}‖                                  {MAGENTA}‖                           ‖                                  ‖
-     —————————————————————————————————{RESET}                               —————————————————————————————————
+     {MAGENTA}——————————[{RESET}{HIGH_YELLOW}CONFIG 1{RESET}{MAGENTA}]—————————————                              ——————————[{RESET}{HIGH_YELLOW}CONFIG 2{RESET}{MAGENTA}]—————————————        
+    ‖{RESET}{HIGH_RED} {UNDERLINE}Puissance :{RESET}{MAGENTA}                      ‖                           ‖ {UNDERLINE}{HIGH_RED}Puissance :{RESET}{MAGENTA}                       ‖
+    {MAGENTA}‖{HIGH_BLUE} Chambre combustion :{RESET} 19{MAGENTA}          ‖                           ‖{HIGH_BLUE} Chambre combustion :{RESET} 72{MAGENTA}           ‖
+    {MAGENTA}‖{HIGH_BLUE} Turbopompe :{RESET} 12{MAGENTA}                  ‖                           ‖{HIGH_BLUE} Turbopompe :{RESET} 46{MAGENTA}                   ‖
+    {MAGENTA}‖{HIGH_BLUE} Air comprimé :{RESET} 34{MAGENTA}                ‖                           ‖{HIGH_BLUE} Air comprimé :{RESET} 119{MAGENTA}                ‖
+    {MAGENTA}‖{HIGH_BLUE} Réservoir :{RESET} 40{MAGENTA}                   ‖                           ‖{HIGH_BLUE} Réservoir :{RESET} 210{MAGENTA}                   ‖
+    {MAGENTA}‖                                  ‖                           ‖                                   ‖  
+    ‖ {HIGH_RED}{UNDERLINE}Équipements :{RESET}{MAGENTA}                    ‖                           ‖  {UNDERLINE}{HIGH_RED}Équipements :{RESET}{MAGENTA}                    ‖
+    {MAGENTA}‖{HIGH_BLUE} Fuselage :{RESET} 11{MAGENTA}                    ‖                           ‖{HIGH_BLUE} Fuselage :{RESET} 29{MAGENTA}                     ‖
+    {MAGENTA}‖{HIGH_BLUE} Empennage :{RESET} 29{MAGENTA}                   ‖                           ‖{HIGH_BLUE} Empennage :{RESET} 52{MAGENTA}                    ‖
+    {MAGENTA}‖{HIGH_BLUE} Déflecteur de jet :{RESET} 30{MAGENTA}           ‖                           ‖{HIGH_BLUE} Déflecteur de jet :{RESET} 90{MAGENTA}            ‖
+    {MAGENTA}‖{HIGH_BLUE} Gouverne aerodynamique :{RESET} 22{MAGENTA}      ‖                           ‖{HIGH_BLUE} Gouverne aerodynamique :{RESET} 11{MAGENTA}       ‖
+    {MAGENTA}‖{HIGH_BLUE} Plateforme gyroscopique:{RESET} 16{MAGENTA}      ‖                           ‖{HIGH_BLUE} Plateforme gyroscopique:{RESET} 76{MAGENTA}       ‖
+    {MAGENTA}‖                                  {MAGENTA}‖                           ‖                                   ‖
+     —————————————————————————————————{RESET}                               {MAGENTA}—————————————————————————————————{RESET}
      
      
-     ——————————[CONFIG 3]—————————————                              ——————————[CONFIG 4]—————————————         
-    ‖  {UNDERLINE} Puissance :{RESET}                    ‖                           ‖  {UNDERLINE} Puissance :{RESET}                    ‖
-    ‖ Chambre combustion : 103         ‖                           ‖ Chambre combustion : 193         ‖
-    ‖ Turbopompe : 79                  ‖                           ‖ Turbopompe : 68                  ‖
-    ‖ Air comprimé : 89                ‖                           ‖ Air comprimé : 74                ‖
-    ‖ Réservoir : 220                  ‖                           ‖ Réservoir : 802                  ‖
-    ‖                                  ‖                           ‖                                  ‖ 
-    ‖  {UNDERLINE} Équipements :{RESET}                  ‖                           ‖   {UNDERLINE} Équipements :{RESET}                 ‖ 
-    ‖ Fuselage : 105                   ‖                           ‖ Fuselage : 308                   ‖   
-    ‖ Empennage : 90                   ‖                           ‖ Empennage : 212                  ‖  
-    ‖ Déflecteur de jet : 65           ‖                           ‖ Déflecteur de jet : 172          ‖ 
-    ‖ Gouverne aerodynamique : 67      ‖                           ‖ Gouverne aerodynamique : 420     ‖ 
-    ‖ Plateforme gyroscopique: 99      ‖                           ‖ Plateforme gyroscopique: 192     ‖  
-    ‖                                  ‖                           ‖                                  ‖  
-     —————————————————————————————————                              —————————————————————————————————                
+    {MAGENTA}  ——————————[{RESET}{HIGH_YELLOW}CONFIG 3{RESET}{MAGENTA}]—————————————                               ——————————[{RESET}{HIGH_YELLOW}CONFIG 4{RESET}{MAGENTA}]—————————————         
+    {MAGENTA} ‖  {UNDERLINE}{HIGH_RED}Puissance :{RESET}{MAGENTA}                      ‖                           ‖  {UNDERLINE}{HIGH_RED}Puissance :{RESET}{MAGENTA}                      ‖
+    {MAGENTA} ‖ {HIGH_BLUE}Chambre combustion :{RESET} 103{MAGENTA}          ‖                           ‖{HIGH_BLUE} Chambre combustion :{RESET} 193{MAGENTA}          ‖
+    {MAGENTA} ‖{HIGH_BLUE} Turbopompe :{RESET} 79{MAGENTA}                   ‖                           ‖{HIGH_BLUE} Turbopompe :{RESET} 68{MAGENTA}                   ‖
+    {MAGENTA} ‖{HIGH_BLUE} Air comprimé :{RESET} 89{MAGENTA}                 ‖                           ‖{HIGH_BLUE} Air comprimé :{RESET} 74{MAGENTA}                 ‖
+    {MAGENTA} ‖{HIGH_BLUE} Réservoir :{RESET} 220{MAGENTA}                   ‖                           ‖{HIGH_BLUE} Réservoir :{RESET} 802{MAGENTA}                   ‖
+    {MAGENTA} ‖                                   ‖                           ‖                                   ‖ 
+    {MAGENTA} ‖  {UNDERLINE}{HIGH_RED}Équipements :{RESET}{MAGENTA}                    ‖                           ‖   {UNDERLINE}{HIGH_RED}Équipements :{RESET}{MAGENTA}                   ‖ 
+    {MAGENTA} ‖{HIGH_BLUE} Fuselage :{RESET} 105{MAGENTA}                    ‖                           ‖{HIGH_BLUE} Fuselage :{RESET} 308{MAGENTA}                    ‖   
+    {MAGENTA} ‖{HIGH_BLUE} Empennage :{RESET} 90{MAGENTA}                    ‖                           ‖{HIGH_BLUE} Empennage :{RESET} 212{MAGENTA}                   ‖  
+    {MAGENTA} ‖{HIGH_BLUE} Déflecteur de jet :{RESET} 65{MAGENTA}            ‖                           ‖{HIGH_BLUE} Déflecteur de jet :{RESET} 172{MAGENTA}           ‖ 
+   {MAGENTA}  ‖{HIGH_BLUE} Gouverne aerodynamique :{RESET} 67{MAGENTA}       ‖                           ‖{HIGH_BLUE} Gouverne aerodynamique :{RESET} 420{MAGENTA}      ‖ 
+   {MAGENTA}  ‖{HIGH_BLUE} Plateforme gyroscopique:{RESET} 99{MAGENTA}       ‖                           ‖{HIGH_BLUE} Plateforme gyroscopique :{RESET} 192{MAGENTA}     ‖  
+   {MAGENTA}  ‖                                   ‖                           ‖                                   ‖  
+   {MAGENTA}   —————————————————————————————————                               —————————————————————————————————                
      
      """)
+    
+    
+def credits():
+    print("""
+          Jeu python blabla bli blou""")
+    
+    
+def game_over():
+    clear()
+    print("""
+          Perdu ! Tapez 'retry' pour relancer une partie !
+          """)
+    
+
+def win():
+    clear()
+    print("""
+          Gagné ! Patientez pour accéder aux crédits et sources qui ont permis le développement du jeu.
+          
+          Une fois les crédits affichés, tapez 'menu' si vous souhaitez retourner sur le manu principal.
+          """)
+    time.sleep(6)
+    clear()
+    credits()
+    if user_input == 'menu':
+        menu()
+
+    
+
+    
+def conf1():
+    print("Montage de la fusée en cours, veuillez patientez . . .")
+    time.sleep(3)
+    clear()
+    print("mettre ici l'animation de la fusée qui décolle et explose en vol")
+    time.sleep(2)
+    clear()
+    game_over()
+    # mettre un cls ici et un panneau GAME OVER! qui annonce l'explosion de la fusée, et la raison de l'explosion 
+    # => mettre un message "ré-essayer ?" qui renvoie sur la fonction "y"
+
+def conf2():
+    print("La seconde configuration vous plaît ? Très bien, l'équipe technique se charge du montage !")
+    time.sleep(3)
+    clear()
+    print("mettre ici l'animation de la fusée qui décolle et explose en vol")
+    time.sleep(2)
+    clear()
+    game_over()
+    # mettre un cls ici et un panneau GAME OVER! qui annonce l'explosion de la fusée, et la raison de l'explosion 
+    # => mettre un message "ré-essayer ?" qui renvoie sur la fonction "y"
+    
+def conf3():
+    print("On m'a dit que la 3ème configuration vous faisait de l'oeil, mon équipe technique se charge de l'assemblage !")
+    time.sleep(4)
+    clear()
+    print("mettre ici l'animation de la fusée qui décolle et explose en vol")
+    time.sleep(2)
+    clear()
+    game_over()
+    # mettre un cls ici et un panneau GAME OVER! qui annonce l'explosion de la fusée, et la raison de l'explosion 
+    # => mettre un message "ré-essayer ?" qui renvoie sur la fonction "y"
+
+def conf4():
+    print("La configuration 4, n'est-ce pas ? J'espère que votre instinct est bon !")
+    time.sleep(5)
+    clear()
+    print("mettre ici l'animation de la fusée qui décolle et s'envole")
+    time.sleep(2)
+    clear()
+    win()
+    # mettre un cls ici et un panneau VICTOIRE! qui annonce que la fusée fonctionne correctement
+    # => afficher les crédits (lien repo github, lien vers le schéma d'inspiration de la fusée)
     
 def go_back():
     if len(function_stack) > 1:
@@ -197,6 +270,18 @@ while True:
     elif user_input == 'y':
         clear()
         y()
+    elif user_input == 'config1':
+        clear()
+        conf1()
+    elif user_input == 'config2':
+        clear()
+        conf2()
+    elif user_input == 'config3':
+        clear()
+        conf3()
+    elif user_input == 'config4':
+        clear()
+        conf4()
 
 
 
