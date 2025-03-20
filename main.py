@@ -88,7 +88,7 @@ def rules():
         Comme annoncé dans le menu, votre {HIGH_RED}mission{RESET} sera de faire un choix entre -- configurations.
         
         
-        Étudiez bien les configurations, utilisez le {HIGH_RED}manuel{RESET}, et veillez à ce qu'il n'y est pas de pièces 
+        Étudiez bien les configurations, utilisez le {HIGH_RED}manuel{RESET} pour pouvoir jouer, et veillez à ce qu'il n'y est pas de pièces 
         trop puissantes, ou inversement.
         
         Votre fusée doit voler, pas s'écraser !
@@ -109,16 +109,19 @@ def rules():
 def h():
     function_stack.append(h)
     print(f"""{MAGENTA}
-        --------------------------[{RESET}{HIGH_BLUE} JAVA{RESET}{HIGH_YELLOW} HELP{RESET}{MAGENTA} ]--------------------------{RESET}
+        --------------------------[{RESET}{HIGH_BLUE} JAVA{RESET}{HIGH_YELLOW} MANUEL{RESET}{MAGENTA} ]--------------------------{RESET}
         
         {UNDERLINE}{BOLD}{HIGH_RED}Commandes config/informatives :{RESET}
         
-        {HIGH_CYAN}home{RESET}{HIGH_YELLOW}-{RESET} accéder au menu principal
-        {HIGH_CYAN}rules{RESET}{HIGH_YELLOW}-{RESET} obtenir les règles
-        {HIGH_CYAN}help{RESET}{HIGH_YELLOW}-{RESET} accéder au menu d'aide
+        {HIGH_CYAN}home{RESET}{HIGH_YELLOW} -{RESET} accéder au menu principal
+        {HIGH_CYAN}rules{RESET}{HIGH_YELLOW} -{RESET} obtenir les règles
+        {HIGH_CYAN}help{RESET}{HIGH_YELLOW} -{RESET} accéder au menu d'aide
+        {HIGH_CYAN}back{RESET}{HIGH_YELLOW} -{RESET} retourner au menu précédent
+        {HIGH_CYAN}bye{RESET}{HIGH_YELLOW} -{RESET} quitter le jeu
         
         {UNDERLINE}{BOLD}{HIGH_RED}Commandes de jeu :{RESET}
-        {RED} PAS ENCORE DEV{RESET}
+        {HIGH_CYAN}retry{RESET}{HIGH_YELLOW} -{RESET} relancer une partie
+        {HIGH_CYAN}conf{RESET}{HIGH_YELLOW} -{RESET} afin de sélectionner une configuration, tapez '{HIGH_GREEN}conf1{RESET}' (pour la 2ème, 'conf2', etc)
         
         
         '{HIGH_GREEN}back{RESET}' => retour au menu précédent
@@ -282,6 +285,9 @@ while True:
     elif user_input == 'config4':
         clear()
         conf4()
+    elif user_input == 'retry':
+        clear()
+        y()
 
 
 
