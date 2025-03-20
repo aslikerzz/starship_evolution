@@ -4,7 +4,18 @@ import subprocess
 import math
 import winsound
 
-# ci-dessous, je définis la fonction "stack", qui va me permettre de créer un log des fonctions utilisées (quand le joueur tape 'back', ça pourra le ramener dans le menu précédent)
+# ci-dessous, la variable de la fusée
+
+starship = [
+    r"   ^",
+    r"  / \\",
+    r"  |-|",
+    r" /|||\\",
+    r"  | |",
+    r" /_|_\\"
+]
+
+# ci-dessous, je définis la variable "stack", qui va me permettre de créer un log des fonctions utilisées (quand le joueur tape 'back', ça pourra le ramener dans le menu précédent)
 function_stack = []
 
 # lignes prog : 166/290  =>  124 lignes vides/commentaires (en comptant celle-ci)
@@ -169,7 +180,17 @@ def y():
    {MAGENTA}   —————————————————————————————————                               —————————————————————————————————                
      
      """)
-    
+
+# ci-dessous l'animation de la fusée
+
+def test():
+    for i in range(20, -1, -1):
+        clear()
+        print("\n"*i)
+        for line in starship:
+            print(line)
+        time.sleep(0.1)
+
     
 def credits():
     print("""
@@ -288,7 +309,9 @@ while True:
     elif user_input == 'retry':
         clear()
         y()
-
+    elif user_input == 'test':
+        clear()
+        test()
 
 
 # source schéma fusée :
