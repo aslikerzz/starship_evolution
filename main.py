@@ -4,15 +4,66 @@ import subprocess
 import math
 import winsound
 
-# ci-dessous, la variable de la fusée
+# ci-dessous, la variable des fusées
 
-starship = [
-    r"   ^",
-    r"  / \\",
-    r"  |-|",
-    r" /|||\\",
-    r"  | |",
-    r" /_|_\\"
+starship1 = [
+    r"                                        ^",
+    r"                                       / \\",
+    r"                                       |-|",
+    r"                                       |||",
+    r"                                       | |",
+    r"                                       |_|",
+    r"                                      //=\\"
+    r"                                        |",
+    r"                                          ",
+    r"                                        |",
+    r"                                          ",
+    r"                                        |",
+]
+
+starship2 = [
+    r"                                        |",
+    r"                                       / \\",
+    r"                                       |-|",
+    r"                                      /|||\\",
+    r"                                     //| |\\",
+    r"                                       |_|",
+    r"                                      //=\\"
+    r"                                        |",
+    r"                                          ",
+    r"                                        |",
+    r"                                          ",
+    r"                                        |",
+]
+
+starship3 = [
+    r"                                        o",
+    r"                                       / \\",
+    r"                                       |-|",
+    r"                                      /|u|\\",
+    r"                                     //|s|\\",
+    r"                                       |a|"
+    r"                                       |_|",
+    r"                                      //@\\"
+    r"                                        |",
+    r"                                         ",
+    r"                                        |",
+    r"                                         ",
+    r"                                        |",
+]
+
+starship4 = [
+    r"                                         ^",
+    r"                                       // \\",
+    r"                                       |-|-|",
+    r"                                      //|||\\",
+    r"                                       | | |",
+    r"                                      //_|_\\",
+    r"                                         |",
+    r"                                         ",
+    r"                                         |",
+    r"                                         ",
+    r"                                         |",
 ]
 
 # ci-dessous, je définis la variable "stack", qui va me permettre de créer un log des fonctions utilisées (quand le joueur tape 'back', ça pourra le ramener dans le menu précédent)
@@ -181,13 +232,37 @@ def y():
      
      """)
 
-# ci-dessous l'animation de la fusée
+# ci-dessous l'animation des fusées
 
-def test():
+def star1():
     for i in range(20, -1, -1):
         clear()
         print("\n"*i)
-        for line in starship:
+        for line in starship1:
+            print(line)
+        time.sleep(0.1)
+
+def star2():
+    for i in range(20, -1, -1):
+        clear()
+        print("\n"*i)
+        for line in starship2:
+            print(line)
+        time.sleep(0.1)
+        
+def star3():
+    for i in range(20, -1, -1):
+        clear()
+        print("\n"*i)
+        for line in starship3:
+            print(line)
+        time.sleep(0.1)
+
+def star4():
+    for i in range(20, -1, -1):
+        clear()
+        print("\n"*i)
+        for line in starship4:
             print(line)
         time.sleep(0.1)
 
@@ -209,7 +284,7 @@ def win():
     print("""
           Gagné ! Patientez pour accéder aux crédits et sources qui ont permis le développement du jeu.
           
-          Une fois les crédits affichés, tapez 'menu' si vous souhaitez retourner sur le manu principal.
+          Une fois les crédits affichés, tapez 'home' si vous souhaitez retourner sur le manu principal.
           """)
     time.sleep(6)
     clear()
@@ -224,7 +299,7 @@ def conf1():
     print("Montage de la fusée en cours, veuillez patientez . . .")
     time.sleep(3)
     clear()
-    print("mettre ici l'animation de la fusée qui décolle et explose en vol")
+    star1()
     time.sleep(2)
     clear()
     game_over()
@@ -235,7 +310,7 @@ def conf2():
     print("La seconde configuration vous plaît ? Très bien, l'équipe technique se charge du montage !")
     time.sleep(3)
     clear()
-    print("mettre ici l'animation de la fusée qui décolle et explose en vol")
+    star2()
     time.sleep(2)
     clear()
     game_over()
@@ -246,7 +321,7 @@ def conf3():
     print("On m'a dit que la 3ème configuration vous faisait de l'oeil, mon équipe technique se charge de l'assemblage !")
     time.sleep(4)
     clear()
-    print("mettre ici l'animation de la fusée qui décolle et explose en vol")
+    star3()
     time.sleep(2)
     clear()
     game_over()
@@ -257,7 +332,7 @@ def conf4():
     print("La configuration 4, n'est-ce pas ? J'espère que votre instinct est bon !")
     time.sleep(5)
     clear()
-    print("mettre ici l'animation de la fusée qui décolle et s'envole")
+    star4()
     time.sleep(2)
     clear()
     win()
@@ -294,16 +369,16 @@ while True:
     elif user_input == 'y':
         clear()
         y()
-    elif user_input == 'config1':
+    elif user_input == 'conf1':
         clear()
         conf1()
-    elif user_input == 'config2':
+    elif user_input == 'conf2':
         clear()
         conf2()
-    elif user_input == 'config3':
+    elif user_input == 'conf3':
         clear()
         conf3()
-    elif user_input == 'config4':
+    elif user_input == 'conf4':
         clear()
         conf4()
     elif user_input == 'retry':
@@ -311,7 +386,7 @@ while True:
         y()
     elif user_input == 'test':
         clear()
-        test()
+        star1()
 
 
 # source schéma fusée :
