@@ -69,7 +69,7 @@ starship4 = [
 # ci-dessous, je définis la variable "stack", qui va me permettre de créer un log des fonctions utilisées (quand le joueur tape 'back', ça pourra le ramener dans le menu précédent)
 function_stack = []
 
-# lignes prog : 166/290  =>  124 lignes vides/commentaires (en comptant celle-ci)
+# lignes prog : 205/394  =>  189 lignes vides/commentaires (en comptant celle-ci)
 
 # j'appelle ici les codes ANSI pour les couleurs 
 # d'abord, je mets les effets et le reset
