@@ -150,8 +150,8 @@ def rules():
         Comme annoncé dans le menu, votre {HIGH_RED}mission{RESET} sera de faire un choix entre -- configurations.
         
         
-        Étudiez bien les configurations, utilisez le {HIGH_RED}manuel{RESET} pour pouvoir jouer, et veillez à ce qu'il n'y est pas de pièces 
-        trop puissantes, ou inversement.
+        Étudiez bien les configurations, utilisez le {HIGH_RED}manuel{RESET} pour pouvoir jouer, 
+        et veillez à ce qu'il n'y est pas de pièces trop puissantes, ou inversement.
         
         Votre fusée doit voler, pas s'écraser !
         
