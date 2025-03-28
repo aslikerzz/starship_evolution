@@ -15,4 +15,9 @@ Le jeu peut prendre fin de 2 manières :
 - soit la fusée est bien conçue, lui permettant ainsi de voler correctement
 
 
-*JAVA : Jubilation pour l'Aéronautique et le Vol vers l'Aventure
+*JAVA : Jubilation pour l'Aéronautique et le Vol vers l'Aventure*
+
+
+# VERSION 2 : 
+
+Test d'une seconde version du jeu pour sauver le jeu (version 1 ne respecte pas les attentes de la prof). 
