@@ -1,4 +1,4 @@
-**# Starship Evolution**
+# Starship Evolution : 
 
 Le joueur incarne le rôle d'un pilote missioné par la JAVA*.
 
@@ -18,6 +18,6 @@ Le jeu peut prendre fin de 2 manières :
 *JAVA : Jubilation pour l'Aéronautique et le Vol vers l'Aventure*
 
 
-# VERSION 2 : 
+**VERSION 2 :**
 
 Test d'une seconde version du jeu pour sauver le jeu (version 1 ne respecte pas les attentes de la prof). 
